@@ -1,31 +1,23 @@
-import React, { Component } from 'react';
+import React,{useState} from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import TodoForm from './TodoForm';
-import TodoItems from './TodoItems';
 
-class Todo extends Component {
+function Todo({ removeTodo, todos }) {
 
-    constructor(){
-        super()
-        this.state ={
-            items : ["buy milk","dance-class"]
-        }
-    }
-    addItem = (data) => {
-        this.setState({
-            items :[...this.state.items,data]
-        })
-    }
-    render() {
-        return (
-            <div className ="container ml-6">                
-             <TodoForm  
-             item ={this.state.items}
-             addItem ={this.addItem}/> 
-             <TodoItems item ={this.state.items} />                
-            </div>
-        );
-    }
+
+    const list = todos?.map((todo) => {
+        return <div className="todo-list mt-3" key ={todo.id}>
+            <li className="list-group-item">{todo.text}
+             <button className ='btn btn-dark float-right ' style={{marginTop:"-7px"}} onClick={() => removeTodo(todo.id)}>x</button>
+
+</li>
+        </div>
+    })
+    return (
+        <div>
+            
+            {list}
+        </div>
+    )
 }
 
-export default Todo;
+export default Todo

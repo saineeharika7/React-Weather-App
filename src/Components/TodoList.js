@@ -6,6 +6,9 @@ function TodoList() {
 
 
     const addTodo =todo =>{
+      if(!todo.text || /^\s*$/.test(todo.text)){
+        return null
+    }
       const newtodo = [...todos,todo]
       setTodos(newtodo)
       console.log(newtodo)

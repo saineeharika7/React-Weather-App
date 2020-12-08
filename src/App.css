@@ -1,0 +1,15 @@
+.Todo-App{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    border : 1px solid black;
+    padding : 30px;
+    width :40%;
+    margin-left :470px;
+    margin-top : 50px;
+    background-color:#D291BC;
+    border-radius :5px;
+}
+body{
+    background-color:black
+}

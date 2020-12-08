@@ -19,7 +19,7 @@ function TodoList() {
     
     return (
         <div>
-        <h1  className="d-flex justify-content-center">What's on your mind !!</h1>
+        <h3 id ="heading" style={{fontStyle :'italic'}} className="d-flex justify-content-center">What's on your mind !!</h3><br />
         <TodoForm onSubmit ={addTodo}/>
         <Todo 
         todos ={todos} 
